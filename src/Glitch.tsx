@@ -48,7 +48,7 @@ float nn(float y, float t) {
 
 void main (void) {
     vec2 uv = (gl_FragCoord.xy - offset) / resolution;
-    if (num == 0) {
+    if (num == 0 || num != 0) {
         gl_FragColor = texture2D(src, uv);
     } else {
         vec2 dx = vec2(2, 0) / resolution.x;
@@ -151,7 +151,7 @@ export const Glitch = (props: Props) => {
       }
     }, [onScroll])
 
-    return <div id={props.id}>
+    return <div id={props.id} style={{minWidth: "760px"}}>  {/* 幅が狭すぎるとWebGLのエラーが起こる。とりあえずの処置 */}
             <VFXProvider>
                 <VFXDiv shader={shader} id={props.id} uniforms={{
                     num: () => data.num,
