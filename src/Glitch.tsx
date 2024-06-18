@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import { VFXDiv, VFXProvider } from 'react-vfx';
 
 const shader = `
@@ -108,9 +108,6 @@ void main (void) {
                 float b = sin(time * 2.) * 32. + 48.;
                 uv = floor(uv * b) / b;
                 gl_FragColor += texture2D(src, uv);
-            }
-            if (num > 60) {
-                gl_FragColor = texture2D(src, uv);
             }
         }
     }

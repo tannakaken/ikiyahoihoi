@@ -1,4 +1,3 @@
-import React from 'react'
 import { WigglingCharacters } from './WigglingCharacters'
 import { novel1 } from './assets/novel'
 import "./App.css"
