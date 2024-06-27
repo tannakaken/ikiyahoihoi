@@ -186,9 +186,9 @@ export const Glitch = (props: Props) => {
       }
     }, [onScroll])
 
-    return <div id={props.id}>  {/* 幅が狭すぎるとWebGLのエラーが起こる。とりあえずの処置 */}
+    return <div id={props.id}>
             <VFXProvider>
-                <VFXDiv shader={shader} overflow={100} id={props.id} uniforms={{
+                <VFXDiv shader={shader} overflow={100}uniforms={{
                     num: () => data.num,
                 }}>
                     <Root body={text || props.body} />

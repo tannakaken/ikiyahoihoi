@@ -13,6 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<div>
+            <h1>行きはよいよい、帰りは怖い</h1>
             <div><Link to="/vanish">VANISH</Link></div>
             <div><Link to="/randomize">RANDOMIZE</Link></div>
             <div><Link to="/wiggling-characters">WIGGLING CHARACTERS</Link></div>
