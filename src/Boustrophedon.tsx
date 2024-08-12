@@ -23,7 +23,7 @@ export const Boustrophedon = (props: Props) => {
   <div>
     <Link to="/">&lt;戻る</Link>
   </div>
-  <h2 style={{
+  <h2 className='title' style={{
     textAlign: "center",
     backgroundColor: "white",
   }}>{props.novel.title}</h2>
@@ -44,10 +44,8 @@ export const Boustrophedon = (props: Props) => {
     background: "white",
     padding: "1rem",
   }}>
-    {"　"}戻ると消える小説。<br />
-    {"　"}ゆっくりスクロールする場合と速くスクロールする場合の違いを微調整したりした。
-    {"　"}一つ一つの文字を分解して、spanタグに包んでいるため、禁則処理が無効になってしまうことに驚いた。<br />
-    {"　"}分解の差異に、句読点や役物は特別扱いすることで、なんとかした。
+    {"　"}牛耕式、つまり一行ずつ読む方向が変わる小説
+    {"　"}古代ギリシャやインダス文字など、古代の文字体系ではよく使われたが、なぜか廃れてしまった。
   </div>
   <div>
     <Link to="/">&lt;戻る</Link>

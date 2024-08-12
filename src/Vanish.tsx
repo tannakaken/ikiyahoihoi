@@ -97,7 +97,7 @@ export const Vanish = (props: Props) => {
     <div>
     <Link to="/">&lt;戻る</Link>
   </div>
-  <h2 style={{
+  <h2 className='title' style={{
     textAlign: "center",
     backgroundColor: "white",
   }}>{props.novel.title}</h2>
