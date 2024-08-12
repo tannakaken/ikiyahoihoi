@@ -100,6 +100,14 @@ export const Vanish = (props: Props) => {
         if (c === "\n") {
             return <br key={`char-${index}`} />
         }
+        // 句読点も分割してしまうと、禁則処理が働かなくなってしまう。
+        if (c === "、" || c === "。") {
+          return null;
+        }
+        const next = charList[index + 1];
+        if (next === "、" || next === "。") {
+          return <Char num={num} key={`char-${index}`} char={`${c}${next}`} />
+        }
         return <Char num={num} key={`char-${index}`} char={c} />
     })
   }</div>
