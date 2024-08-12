@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Novel } from './assets/novel.type';
 import { Link } from 'react-router-dom';
 
@@ -16,9 +17,44 @@ const splitStringByLength = (line: string, length = 32, acc: [string, boolean][]
   }
 }
 
+const calcLineLength = (width: number) => {
+  if (width > 800) {
+    return 32;
+  }
+  if (width > 700) {
+    return 28;
+  }
+  if (width > 600) {
+    return 20;
+  }
+  if (width > 500) {
+    return 14;
+  }
+  if (width > 400) {
+    return 12;
+  }
+  return 10;
+}
+
 export const Boustrophedon = (props: Props) => {
+  const [lineLength, setLineLength] = useState(calcLineLength(window.innerWidth));
+  useEffect(() => {
+    /**
+     * ウィンドウサイズがリサイズするときに調節する。
+     */
+    const onResize = () => {
+      setLineLength(calcLineLength(window.innerWidth));
+    };
+    window.addEventListener("resize", onResize);
+    () => {
+      window.removeEventListener("resize", onResize);
+    }
+  })
+  /**
+   * 一行ずつ変わる。
+   * 最初は左だが、UIを生成する前に反転するので、最初は右にしてある。
+   */
   let left = false;
-  const lineLength = window.innerWidth < 720 ? 14 : 32;
   return (<>
   <div>
     <Link to="/">&lt;戻る</Link>
