@@ -34,8 +34,9 @@ export const Boustrophedon = (props: Props) => {
       width: "100%",
     }}>{subline}</div>);
   })}</div>))}</div>
-  <h3 style={{
-    textAlign: "center"
+  <h3  style={{
+    textAlign: "center",
+    color: "black",
   }}>解説</h3>
   <div className={"afterword"}>
     {"　"}牛耕式、つまり一行ずつ読む方向が変わる小説
