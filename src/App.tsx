@@ -1,5 +1,6 @@
 import { WigglingCharacters } from './WigglingCharacters'
 import { novel1 } from './assets/novel'
+import { anohito } from './assets/anohito'
 import "./App.css"
 import { Glitch } from './Glitch'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
@@ -19,10 +20,10 @@ function App() {
             <div><Link to="/wiggling-characters">WIGGLING CHARACTERS</Link></div>
             <div><Link to="/glitch">GLITCH</Link></div>
           </div>} />
-          <Route path="/vanish" element={<Vanish body={novel1} />} />
-          <Route path="/wiggling-characters" element={<WigglingCharacters body={novel1} />} />
-          <Route path="/glitch" element={<Glitch body={novel1} />} />
-          <Route path="/randomize" element={<Randomize body={novel1} />} />
+          <Route path="/vanish" element={<Vanish novel={anohito} />} />
+          <Route path="/wiggling-characters" element={<WigglingCharacters novel={novel1} />} />
+          <Route path="/glitch" element={<Glitch novel={novel1} />} />
+          <Route path="/randomize" element={<Randomize novel={novel1} />} />
         </Routes>        
       </BrowserRouter>
     </div>

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react'
 import { VFXDiv, VFXProvider } from 'react-vfx';
+import { Novel } from './assets/novel.type';
 
 const shader = `
 precision mediump float;
@@ -115,7 +116,7 @@ void main (void) {
 `;
 
 type Props = {
-    body: string;
+    novel: Novel;
     id?: string;
 }
 
@@ -188,10 +189,10 @@ export const Glitch = (props: Props) => {
 
     return <div id={props.id}>
             <VFXProvider>
-                <VFXDiv shader={shader} overflow={100}uniforms={{
+                <VFXDiv shader={shader} overflow={100} uniforms={{
                     num: () => data.num,
                 }}>
-                    <Root body={text || props.body} />
+                    <Root body={text || props.novel.body} />
                 </VFXDiv>
             </VFXProvider>
         </div>

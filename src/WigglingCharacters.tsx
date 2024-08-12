@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Novel } from './assets/novel.type';
 
 type CharProps = {
   char: string;
@@ -55,7 +56,7 @@ const Char = ({
 }
 
 type Props = {
-    body: string;
+    novel: Novel;
     id?: string;
 }
 
@@ -88,7 +89,7 @@ export const WigglingCharacters = (props: Props) => {
   }, [onScroll])
 
   return <div id={props.id}>{
-      [...props.body].map((c, index) => {
+      [...props.novel.body].map((c, index) => {
           if (c === "\n") {
               return <br key={`char-${index}`} />
           }

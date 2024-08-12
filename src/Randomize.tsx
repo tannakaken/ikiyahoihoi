@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Novel } from './assets/novel.type';
 
 type Props = {
-    body: string;
+    novel: Novel;
     id?: string;
 }
 
@@ -21,7 +22,7 @@ export const Randomize = (props: Props) => {
   const histories = useMemo<string[]>(() => [], []);
   const [scrollY, setScrollY] = useState(0);
   // リスナに登録する関数
-  const current = histories.length > 0 ? histories[histories.length - 1] : props.body;
+  const current = histories.length > 0 ? histories[histories.length - 1] : props.novel.body;
   const onScroll = useCallback(() => {
     if (window.scrollY < scrollY) {
       histories.push(randomize(current));
