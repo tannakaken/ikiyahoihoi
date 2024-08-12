@@ -97,10 +97,7 @@ export const Vanish = (props: Props) => {
     <div>
     <Link to="/">&lt;戻る</Link>
   </div>
-  <h2 className='title' style={{
-    textAlign: "center",
-    backgroundColor: "white",
-  }}>{props.novel.title}</h2>
+  <h2 className='title'>{props.novel.title}</h2>
   <div id={props.id} className='container'>
    {
     charList.map((c, index) => {
@@ -119,12 +116,10 @@ export const Vanish = (props: Props) => {
     })
   }</div>
   <h3 style={{
-    textAlign: "center"
+    textAlign: "center",
+    color: "black",
   }}>解説</h3>
-  <div className={"afterword"} style={{
-    background: "white",
-    padding: "1rem",
-  }}>
+  <div className={"afterword"}>
     {"　"}戻ると消える小説。<br />
     {"　"}ゆっくりスクロールする場合と速くスクロールする場合の違いを微調整したりした。
     {"　"}一つ一つの文字を分解して、spanタグに包んでいるため、禁則処理が無効になってしまうことに驚いた。<br />

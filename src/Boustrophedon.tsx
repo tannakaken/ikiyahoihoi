@@ -23,10 +23,7 @@ export const Boustrophedon = (props: Props) => {
   <div>
     <Link to="/">&lt;戻る</Link>
   </div>
-  <h2 className='title' style={{
-    textAlign: "center",
-    backgroundColor: "white",
-  }}>{props.novel.title}</h2>
+  <h2 className='title'>{props.novel.title}</h2>
   <div id={props.id} className='container'>
   {props.novel.body.split("\n").map((line, index) => (<div key={`line-${index}`}>{splitStringByLength(line, lineLength).map(([subline, full], index) => {
     left = !left;
@@ -40,10 +37,7 @@ export const Boustrophedon = (props: Props) => {
   <h3 style={{
     textAlign: "center"
   }}>解説</h3>
-  <div className={"afterword"} style={{
-    background: "white",
-    padding: "1rem",
-  }}>
+  <div className={"afterword"}>
     {"　"}牛耕式、つまり一行ずつ読む方向が変わる小説
     {"　"}古代ギリシャやインダス文字など、古代の文字体系ではよく使われたが、なぜか廃れてしまった。
   </div>

@@ -19,6 +19,15 @@
   background-color: bisque;
 }
 
+.title {
+  text-align: center;
+  background-color: white;
+}
+
+.afterword {
+  background-color: white;
+  padding: 1rem;
+}
 
 
 @media (prefers-color-scheme: dark) {
