@@ -12,7 +12,14 @@ const splitStringByLength = (line: string, length = 32, acc: [string, boolean][]
     return [...acc, [line, false]];
   } else {
     const rest = line.substring(length);
-    const head = line.substring(0, length)
+    const head = line.substring(0, length);
+    const headOfRest = rest.charAt(0);
+    if (headOfRest === "。" || headOfRest === "、") {
+      if (rest.length === 1) {
+        return [...acc, [line, false]];
+      }
+      return splitStringByLength(rest.substring(1), length, [...acc, [`${head}${headOfRest}`, true]])
+    }
     return splitStringByLength(rest, length, [...acc, [head, true]]);
   }
 }
