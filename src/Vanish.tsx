@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Novel } from './assets/novel.type';
+import { Link } from 'react-router-dom';
 
 type CharProps = {
   char: string;
@@ -92,10 +93,16 @@ export const Vanish = (props: Props) => {
     return [...props.novel.body];
   }, [props.novel.body])
 
-  return <div id={props.id}>
-    <h2 style={{
-      textAlign: "center"
-    }}>{props.novel.title}</h2>{
+  return (<>
+    <div>
+    <Link to="/">&lt;戻る</Link>
+  </div>
+  <h2 style={{
+    textAlign: "center",
+    backgroundColor: "white",
+  }}>{props.novel.title}</h2>
+  <div id={props.id} className='container'>
+   {
     charList.map((c, index) => {
         if (c === "\n") {
             return <br key={`char-${index}`} />
@@ -111,4 +118,20 @@ export const Vanish = (props: Props) => {
         return <Char num={num} key={`char-${index}`} char={c} />
     })
   }</div>
+  <h3 style={{
+    textAlign: "center"
+  }}>解説</h3>
+  <div className={"afterword"} style={{
+    background: "white",
+    padding: "1rem",
+  }}>
+    {"　"}戻ると消える小説。<br />
+    {"　"}ゆっくりスクロールする場合と速くスクロールする場合の違いを微調整したりした。
+    {"　"}一つ一つの文字を分解して、spanタグに包んでいるため、禁則処理が無効になってしまうことに驚いた。<br />
+    {"　"}分解の差異に、句読点や役物は特別扱いすることで、なんとかした。
+  </div>
+  <div>
+    <Link to="/">&lt;戻る</Link>
+  </div>
+  </>);
 }
