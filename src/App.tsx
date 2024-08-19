@@ -6,7 +6,6 @@ import { Glitch } from './Glitch'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { Randomize } from './Randomize'
 import { Vanish } from './Vanish'
-import { Boustrophedon } from './Boustrophedon'
 
 function App() {
 
@@ -23,7 +22,6 @@ function App() {
             <div><Link to="/randomize">RANDOMIZE</Link></div>
             <div><Link to="/wiggling-characters">WIGGLING CHARACTERS</Link></div>
             <div><Link to="/glitch">GLITCH</Link></div>
-            <div><Link to="/boustrophedon">BOUSTROPHEDON</Link></div>
           </div>} />
           <Route path="/*" element={
           <div className='wrapper'>
@@ -32,7 +30,6 @@ function App() {
               <Route path="/wiggling-characters" element={<WigglingCharacters novel={novel1} />} />
               <Route path="/glitch" element={<Glitch novel={novel1} />} />
               <Route path="/randomize" element={<Randomize novel={novel1} />} />
-              <Route path="/boustrophedon" element={<Boustrophedon novel={novel1} id="boustrophedon" />} />
             </Routes>
           </div>}/>
         </Routes>
