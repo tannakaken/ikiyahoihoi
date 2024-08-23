@@ -88,7 +88,7 @@ export const WigglingCharacters = (props: Props) => {
     }
   }, [onScroll])
 
-  return <div id={props.id}>{
+  return <div id={props.id} className='container'>{
       [...props.novel.body].map((c, index) => {
           if (c === "\n") {
               return <br key={`char-${index}`} />

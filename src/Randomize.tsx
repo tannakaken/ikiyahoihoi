@@ -43,7 +43,7 @@ export const Randomize = (props: Props) => {
     }
   }, [onScroll])
 
-  return <div id={props.id}>{
+  return <div id={props.id} className='container'>{
     current.split("\n").map((line, index) => 
         <p key={`line-${index}`}>{line}</p>
     )

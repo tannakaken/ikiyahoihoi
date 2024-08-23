@@ -17,11 +17,13 @@ function App() {
           textAlign: "center"
         }}><Link to="/">行きはよいよい 帰りはこわい</Link></h1>
         <Routes>
-          <Route path="/" element={<div>
-            <div><Link to="/vanish">VANISH</Link></div>
-            <div><Link to="/randomize">RANDOMIZE</Link></div>
-            <div><Link to="/wiggling-characters">WIGGLING CHARACTERS</Link></div>
-            <div><Link to="/glitch">GLITCH</Link></div>
+          <Route path="/" element={<div className='wrapper'>
+            <div className='container'>
+              <div><Link to="/vanish">VANISH</Link></div>
+              <div><Link to="/randomize">RANDOMIZE</Link></div>
+              <div><Link to="/wiggling-characters">WIGGLING CHARACTERS</Link></div>
+              <div><Link to="/glitch">GLITCH</Link></div>
+            </div>
           </div>} />
           <Route path="/*" element={
           <div className='wrapper'>
