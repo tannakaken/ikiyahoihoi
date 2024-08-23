@@ -101,9 +101,7 @@ export const Glitch = (props: Props) => {
       }
     }, [onScroll])
 
-    return <div id={props.id} style={{
-        backgroundColor: "white",
-    }}>
+    return <div id={props.id} className='container'>
             <VFXProvider>
                 <Root body={props.novel.body} num={num} />
                 {/* <VFXSpan shader={"rainbow"} overflow={100} uniforms={{
